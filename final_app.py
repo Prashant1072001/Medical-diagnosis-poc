@@ -14,7 +14,7 @@ app = Flask(__name__)
 app.secret_key = "pk_db_107"
 
 # Configure PostgreSQL
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:1234@localhost/medical_poc_db'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://<username>:<password>@localhost/<database_name>'
 app.config['SQLALCHEMY_DATABASE_URI'] = (
     f"postgresql://{os.getenv('POSTGRES_USER')}:{os.getenv('POSTGRES_PASSWORD')}@db/{os.getenv('POSTGRES_DB')}"
 )
