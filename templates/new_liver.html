@@ -1,0 +1,152 @@
+<!-- templates/liver_disease.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Liver Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fdfdfd;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+      }
+
+      .form-grid label {
+        font-weight: bold;
+      }
+
+      .form-grid input {
+        padding: 8px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .submit-btn {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .submit-btn button {
+        background-color: #d2691e;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .submit-btn button:hover {
+        background-color: #a0522d;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🧬 Liver Disease AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="form-container">
+      <h2>Liver Disease Prediction</h2>
+      <p>
+        Liver disease refers to any condition that damages the liver and affects
+        its function. Symptoms can include fatigue, jaundice, abdominal pain,
+        and swelling. Early diagnosis is important to avoid liver failure and
+        ensure effective treatment.
+      </p>
+      <form action="/predict_liver" method="post">
+        <div class="form-grid">
+          <div>
+            <label>Age:</label>
+            <input type="number" step="any" name="Age" required />
+          </div>
+          <div>
+            <label>Gender (1=Male, 0=Female):</label>
+            <input type="number" step="any" name="Gender" required />
+          </div>
+          <div>
+            <label>Total Bilirubin:</label>
+            <input type="number" step="any" name="Total_Bilirubin" required />
+          </div>
+          <div>
+            <label>Direct Bilirubin:</label>
+            <input type="number" step="any" name="Direct_Bilirubin" required />
+          </div>
+          <div>
+            <label>Alkaline Phosphotase:</label>
+            <input
+              type="number"
+              step="any"
+              name="Alkaline_Phosphotase"
+              required
+            />
+          </div>
+          <div>
+            <label>Alamine Aminotransferase:</label>
+            <input
+              type="number"
+              step="any"
+              name="Alamine_Aminotransferase"
+              required
+            />
+          </div>
+          <div>
+            <label>Aspartate Aminotransferase:</label>
+            <input
+              type="number"
+              step="any"
+              name="Aspartate_Aminotransferase"
+              required
+            />
+          </div>
+          <div>
+            <label>Total Proteins:</label>
+            <input type="number" step="any" name="Total_Protiens" required />
+          </div>
+          <div>
+            <label>Albumin:</label>
+            <input type="number" step="any" name="Albumin" required />
+          </div>
+          <div>
+            <label>Albumin and Globulin Ratio:</label>
+            <input
+              type="number"
+              step="any"
+              name="Albumin_and_Globulin_Ratio"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

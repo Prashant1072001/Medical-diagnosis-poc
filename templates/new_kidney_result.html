@@ -1,0 +1,48 @@
+<!-- templates/kidney_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kidney Disease Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result_style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🧪 Kidney Disease AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <section class="content">
+      <h1>Prediction Result</h1>
+      {% if prediction == 1 %}
+      <p class="alert-danger">
+        ⚠️ Our model predicts that you may be at risk of Kidney Disease.
+      </p>
+      <h3>Recommended Next Steps:</h3>
+      <ul>
+        <li>Consult a nephrologist for diagnosis and treatment.</li>
+        <li>Get blood tests (creatinine, BUN) and urine tests.</li>
+        <li>Control blood pressure and diabetes if applicable.</li>
+        <li>Limit salt intake and stay hydrated properly.</li>
+      </ul>
+      {% else %}
+      <p class="alert-success">✅ You are not likely to have Kidney Disease.</p>
+      <h3>Prevention Tips:</h3>
+      <ul>
+        <li>Drink adequate water daily to support kidney function.</li>
+        <li>Eat a kidney-friendly, low-sodium diet.</li>
+        <li>Manage underlying conditions like diabetes and hypertension.</li>
+        <li>Avoid overuse of painkillers and unnecessary medications.</li>
+      </ul>
+      {% endif %}
+    </section>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Malaria Prediction - MediWiseAI</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='final_style.css') }}"
+    />
+    <style>
+      .container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      input[type="file"] {
+        margin: 1rem 0;
+      }
+      button {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      h1 {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Malaria Disease Predictor</h1>
+      <p>Upload a microscopic image of a blood smear to detect malaria:</p>
+
+      <form
+        action="/predict/malaria"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input type="file" name="image" accept="image/*" required />
+        <br />
+        <button type="submit">Predict</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breast Cancer Prediction - MediWiseAI</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='final_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Breast Cancer Predictor</h1>
+        <p>Enter the medical details below to predict diagnosis</p>
+      </header>
+
+      <main>
+        <form action="/predict/cancer" method="post">
+          <div class="form-group">
+            <label>Perimeter Worst</label>
+            <input type="number" step="any" name="perimeter_worst" required />
+          </div>
+          <div class="form-group">
+            <label>Radius Worst</label>
+            <input type="number" step="any" name="radius_worst" required />
+          </div>
+          <div class="form-group">
+            <label>Area Worst</label>
+            <input type="number" step="any" name="area_worst" required />
+          </div>
+          <div class="form-group">
+            <label>Concave Points Mean</label>
+            <input
+              type="number"
+              step="any"
+              name="concave points_mean"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Concave Points Worst</label>
+            <input
+              type="number"
+              step="any"
+              name="concave points_worst"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label>Concavity Worst</label>
+            <input type="number" step="any" name="concavity_worst" required />
+          </div>
+          <div class="form-group">
+            <label>Radius Mean</label>
+            <input type="number" step="any" name="radius_mean" required />
+          </div>
+          <div class="form-group">
+            <label>Area SE</label>
+            <input type="number" step="any" name="area_se" required />
+          </div>
+          <div class="form-group">
+            <label>Area Mean</label>
+            <input type="number" step="any" name="area_mean" required />
+          </div>
+          <div class="form-group">
+            <label>Concavity Mean</label>
+            <input type="number" step="any" name="concavity_mean" required />
+          </div>
+
+          <button type="submit">Predict</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>© 2025 MediWiseAI | Breast Cancer Model</p>
+      </footer>
+    </div>
+  </body>
+</html>

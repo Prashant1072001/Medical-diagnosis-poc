@@ -1,0 +1,2 @@
+# .env file will not be pushed to the github repo.
+.env

@@ -1,0 +1,40 @@
+<!-- diabetes_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Diabetes Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Diabetes Prediction Result</h1>
+      <img
+        src="/static/images/diabetes_result.jpg"
+        alt="Diabetes Result"
+        class="disease-img"
+      />
+      {% if prediction == 1 %}
+      <h2 class="positive">You are likely to have diabetes.</h2>
+      <p><strong>Recommended next steps:</strong></p>
+      <ul>
+        <li>Consult a healthcare provider immediately.</li>
+        <li>Maintain a healthy diet and regular physical activity.</li>
+        <li>Monitor blood sugar levels regularly.</li>
+      </ul>
+      {% else %}
+      <h2 class="negative">You are not likely to have diabetes.</h2>
+      <p><strong>Preventive tips:</strong></p>
+      <ul>
+        <li>Maintain a balanced diet rich in fiber.</li>
+        <li>Exercise regularly to maintain a healthy weight.</li>
+        <li>Get regular health check-ups.</li>
+      </ul>
+      {% endif %}
+      <a href="/diabetes" class="back-link">&larr; Try Again</a>
+    </div>
+  </body>
+</html>

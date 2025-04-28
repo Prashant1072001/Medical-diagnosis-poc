@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediWiseAI - Smart Health Diagnosis</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='final_style.css') }}"
+    />
+    <!--href="{{ url_for('static', filename='final_style.css') }}"-->
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Medical Diagnosis</h1>
+
+        <p>Your AI-powered medical diagnosis assistant</p>
+      </header>
+
+      <main>
+        <form action="/predict" method="post">
+          <label for="disease">Select a Disease:</label>
+          <select name="disease" id="disease" required>
+            <option value="" disabled selected>-- Choose a disease --</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="heart">Heart Disease</option>
+            <option value="cancer">Breast Cancer</option>
+            <option value="malaria">Malaria</option>
+            <option value="kidney">Kidney Disease</option>
+            <option value="liver">Liver Disease</option>
+          </select>
+          <button type="submit">Continue</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>Some content...</p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Liver Disease Prediction - MediWiseAI</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='final_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Liver Disease Predictor</h1>
+        <p>Enter the patient's medical details below:</p>
+      </header>
+
+      <main>
+        <form action="/predict/liver" method="post">
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number" name="Age" required />
+          </div>
+          <div class="form-group">
+            <label>Gender</label>
+            <select name="Gender" required>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Total Bilirubin (mg/dL)</label>
+            <input type="number" step="any" name="Total_Bilirubin" required />
+          </div>
+          <div class="form-group">
+            <label>Direct Bilirubin (mg/dL)</label>
+            <input type="number" step="any" name="Direct_Bilirubin" required />
+          </div>
+          <div class="form-group">
+            <label>Alkaline Phosphotase (IU/L)</label>
+            <input type="number" name="Alkaline_Phosphotase" required />
+          </div>
+          <div class="form-group">
+            <label>Alamine Aminotransferase (IU/L)</label>
+            <input type="number" name="Alamine_Aminotransferase" required />
+          </div>
+          <div class="form-group">
+            <label>Aspartate Aminotransferase (IU/L)</label>
+            <input type="number" name="Aspartate_Aminotransferase" required />
+          </div>
+          <div class="form-group">
+            <label>Total Proteins (g/dL)</label>
+            <input type="number" step="any" name="Total_Protiens" required />
+          </div>
+          <div class="form-group">
+            <label>Albumin (g/dL)</label>
+            <input type="number" step="any" name="Albumin" required />
+          </div>
+          <div class="form-group">
+            <label>Albumin and Globulin Ratio</label>
+            <input
+              type="number"
+              step="any"
+              name="Albumin_and_Globulin_Ratio"
+              required
+            />
+          </div>
+          <button type="submit">Predict</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>© 2025 MediWiseAI | Liver Disease Model</p>
+      </footer>
+    </div>
+  </body>
+</html>

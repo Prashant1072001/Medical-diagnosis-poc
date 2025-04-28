@@ -1,0 +1,111 @@
+<!-- templates/register_login.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login or Register</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      #background {
+        height: 100vh;
+      }
+      .auth-container {
+        max-width: 500px;
+        margin: 60px auto;
+        background: #f9f9f9;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .auth-container h2 {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .auth-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .auth-form label {
+        font-weight: bold;
+      }
+
+      .auth-form input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      }
+
+      .auth-form button {
+        background-color: #2e8b57;
+        color: white;
+        border: none;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .auth-form button:hover {
+        background-color: #1e5c3a;
+      }
+
+      .toggle-auth {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .toggle-auth a {
+        color: #2e8b57;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🧬 Medical Diagnosis AI</div>
+      <!--
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+      </ul>
+      -->
+    </header>
+    <section id="background">
+      <div class="auth-container">
+        <h2>{{ action }} Page</h2>
+        <form class="auth-form" action="{{ url_for(endpoint) }}" method="POST">
+          <!-- ✅ Username field should appear on both Register and Login -->
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required />
+
+          {% if action == 'Register' %}
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          {% endif %}
+
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required />
+
+          <button type="submit">{{ action }}</button>
+        </form>
+
+        <div class="toggle-auth">
+          {% if action == 'Login' %} Don't have an account?
+          <a href="{{ url_for('register') }}">Register</a>
+          {% else %} Already have an account?
+          <a href="{{ url_for('login') }}">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!-- templates/malaria_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Malaria Detection Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result_style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🦟 Malaria Detection AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <section class="content">
+      <h1>Prediction Result</h1>
+      {% if prediction == 0 %}
+      <p class="alert-danger">
+        ⚠️ The uploaded image indicates a possibility of Malaria infection.
+      </p>
+      <h3>Recommended Next Steps:</h3>
+      <ul class="steps">
+        <li>Seek immediate medical attention and confirm with lab tests.</li>
+        <li>Take prescribed anti-malarial medication promptly.</li>
+        <li>Rest, stay hydrated, and follow the treatment plan strictly.</li>
+        <li>Use mosquito nets and repellents to prevent further bites.</li>
+      </ul>
+      {% else %}
+      <p class="alert-success">✅ The blood smear does not indicate Malaria.</p>
+      <h3>Prevention Tips:</h3>
+      <ul class="steps">
+        <li>
+          Use mosquito repellents and sleep under insecticide-treated nets.
+        </li>
+        <li>Avoid outdoor exposure during dusk and dawn.</li>
+        <li>Drain stagnant water around your home.</li>
+        <li>Wear long sleeves and pants when outside in high-risk areas.</li>
+      </ul>
+      {% endif %}
+    </section>
+  </body>
+</html>

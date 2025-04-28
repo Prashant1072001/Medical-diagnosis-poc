@@ -1,0 +1,159 @@
+<!-- templates/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About | AI for Medical Diagnosis</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      .about-container {
+        max-width: 900px;
+        margin: 40px auto;
+        background: #fdfdfd;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-container h1 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 32px;
+        color: #0066cc;
+      }
+
+      .about-content {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      .about-content h2 {
+        color: black;
+        font-size: 24px;
+        margin-top: 30px;
+      }
+
+      .about-content p {
+        margin: 15px 0;
+      }
+
+      .about-content ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      .navbar {
+        background-color: #0066cc;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+
+      .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+
+      .nav-links li a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">AI for Medical Diagnosis</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="about-container">
+      <h1>About AI for Medical Diagnosis</h1>
+
+      <div class="about-content">
+        <!-- Content will be pasted here -->
+        <p>Welcome to AI for Medical Diagnosis, a web application designed to harness the power of artificial intelligence in diagnosing various medical conditions. Our goal is to provide an accessible and efficient platform for early detection and prediction of diseases, empowering individuals to make informed decisions about their health.</p>
+
+        <h2>What We Do</h2>
+        <p>
+          <!-- Paste the content related to what the app does -->
+          At AI for Medical Diagnosis, we focus on leveraging machine learning models to predict and diagnose the following conditions:
+            <ul>
+                <li>Heart Disease</li>
+                <li>Diabetes</li>
+                <li>Liver Disease</li>
+                <li>Chronic Kidney Disease</li>
+                <li>Brease Cancer</li>
+                <li>Malaria</li>
+            </ul>
+          Using advanced algorithms trained on real-world medical data, our models analyze the key features and predict the likelihood of a patient suffering from a specific condition.
+        </p>
+
+        <h2>How It Works</h2>
+        <p>
+          <!-- Paste the content related to how the app works -->
+           <ul>
+           <li><b>Data Input:</b> The user enters relevant health data (such as age, blood pressure, cholesterol levels, etc.) for the disease model they want to evaluate.</li>
+           <li><b>Prediction:</b> Based on the provided data, the model will predict the likelihood of the disease.
+           </li>
+           <li><b>Results:</b> The system will show the result and suggest preventive measures or the next steps to take, depending on the prediction.</li>
+        </ul>
+        </p>
+
+        <h2>Why Use AI for Medical Diagnosis?</h2>
+        <ol>
+          <!-- Paste the reasons to use AI for medical diagnosis -->
+           <li><b>Early Detection:</b>AI helps identify potential health risks before symptoms become sever, alllowing for early intervention and treatment.</li>
+           <li><b>Accuracy:</b>With continuous training and optimization, AI models can provide reliable predictions based on vast amounts of medical data.</li>
+           <li><b>Accessibility:</b>You can access our service anytime, anywhere, making healthcare more accessible and convenient.</li>
+           <li><b>Cost-Effective:</b>AI provides an affordable option for preliminary screenings, saving you time and resources in consulting specialists.</li>
+        </ol>
+
+        <h2>Our Technology</h2>
+        <p>
+          <!-- Paste the content related to technology -->
+          Our models are built using state-of-the-art machine learning techniques and trained on datasets obtained from trusted medical sources. We use a variety of algorithms, including Random Forests, Logistic Regression, and Support Vector Machines, to make accurate predictions.
+        </p>
+
+        <h2>Get Involved</h2>
+        <p>
+          <!-- Paste the content related to getting involved -->
+          We believe that the future of healthcare lies in the combination of artificial intelligence and human expertise. We're constantly working to improve our models and expand the scope of diseases we can predict. If you're a healthcare professional, researcher, or just someone passionate about health technology, feel free to reach out and collaborate with us.
+        </p>
+
+        <h2>Disclaimer</h2>
+        <p>
+          <!-- Paste the disclaimer content -->
+          While the AI-powered predictions can be helpful in assessing the risk of certain diseases, they should not be used as a substitute for professional medical advice, diagnosis, or treatment. Always consult with a healthcare provider for any medical concerns.
+        </p>
+
+        <h2>Contact Us</h2>
+        <p>
+          <!-- Paste the contact information -->
+          For any inquiries, or feedback, feel free to get in touch with us at <a href="mailto:prashant.sunware@gmail.com">prashant.sunware17@gmail.com</a>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

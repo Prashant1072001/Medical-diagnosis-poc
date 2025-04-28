@@ -1,0 +1,165 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disease Prediction App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        padding: 20px;
+      }
+      .container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 500px;
+        margin: 0 auto;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Disease Prediction</h2>
+      <form action="/predict" method="post">
+        <div class="form-group">
+          <label for="disease">Select Disease:</label>
+          <select name="disease" id="disease">
+            <option value="heart">Heart Disease</option>
+            <option value="diabetes">Diabetes</option>
+            <option value="liver">Liver Disease</option>
+            <option value="kidney">Kidney Disease</option>
+            <option value="cancer">Cancer</option>
+            <option value="malaria">Malaria</option>
+          </select>
+        </div>
+        {% for field in fields %}
+        <div class="form-group">
+          <label>{{ field }}</label>
+          <input type="text" name="{{ field }}" required />
+        </div>
+        {% endfor %}
+        <button type="submit">Predict</button>
+      </form>
+      {% if prediction %}
+      <h3>Prediction Result: {{ prediction }}</h3>
+      {% endif %}
+    </div>
+  </body>
+</html>
+
+<!-- For heart disease only 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Heart Disease Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Heart Disease Prediction</h2>
+      <form action="/predict" method="post">
+        <div class="grid">
+          <input type="text" name="age" placeholder="Age" required />
+          <input
+            type="text"
+            name="sex"
+            placeholder="Sex (1=Male, 0=Female)"
+            required
+          />
+          <input
+            type="text"
+            name="cp"
+            placeholder="Chest Pain Type (0-3)"
+            required
+          />
+          <input
+            type="text"
+            name="trestbps"
+            placeholder="Resting Blood Pressure"
+            required
+          />
+          <input type="text" name="chol" placeholder="Cholesterol" required />
+          <input
+            type="text"
+            name="fbs"
+            placeholder="Fasting Blood Sugar > 120 (1 or 0)"
+            required
+          />
+          <input
+            type="text"
+            name="restecg"
+            placeholder="Rest ECG (0-2)"
+            required
+          />
+          <input
+            type="text"
+            name="thalach"
+            placeholder="Max Heart Rate Achieved"
+            required
+          />
+          <input
+            type="text"
+            name="exang"
+            placeholder="Exercise Induced Angina (1 or 0)"
+            required
+          />
+          <input
+            type="text"
+            name="oldpeak"
+            placeholder="ST depression"
+            required
+          />
+          <input type="text" name="slope" placeholder="Slope (0-2)" required />
+          <input
+            type="text"
+            name="ca"
+            placeholder="Number of Major Vessels (0-3)"
+            required
+          />
+          <input
+            type="text"
+            name="thal"
+            placeholder="Thal (0=normal, 1=fixed defect, 2=reversable defect)"
+            required
+          />
+        </div>
+        <button type="submit">Predict</button>
+      </form>
+      <h3>{{ prediction_text }}</h3>
+    </div>
+  </body>
+</html>
+-->

@@ -1,0 +1,99 @@
+<!-- templates/malaria.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Malaria Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fdfdfd;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .form-grid label {
+        font-weight: bold;
+      }
+
+      .form-grid input[type="file"] {
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+      }
+
+      .submit-btn {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .submit-btn button {
+        background-color: #da3b0b;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .submit-btn button:hover {
+        background-color: #a42d07;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🦟 Malaria Detection AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="form-container">
+      <h2>Malaria Prediction</h2>
+      <p>
+        Malaria is a potentially life-threatening disease caused by parasites
+        transmitted through the bites of infected mosquitoes. Upload a
+        microscope image of a red blood cell to check for malaria infection.
+      </p>
+      <form
+        action="/predict_malaria"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <div class="form-grid">
+          <div>
+            <label>Upload Cell Image:</label>
+            <input type="file" name="image" accept="image/*" required />
+          </div>
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kidney Disease Prediction - MediWiseAI</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='final_style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kidney Disease Predictor</h1>
+        <p>Fill in the patient's test results below</p>
+      </header>
+
+      <main>
+        <form action="/predict/kidney" method="post">
+          <div class="form-group">
+            <label>Hemoglobin (g/dL)</label>
+            <input type="number" step="any" name="hemo" required />
+          </div>
+          <div class="form-group">
+            <label>Packed Cell Volume</label>
+            <input type="number" step="any" name="pcv" required />
+          </div>
+          <div class="form-group">
+            <label>Serum Creatinine (mg/dL)</label>
+            <input type="number" step="any" name="sc" required />
+          </div>
+          <div class="form-group">
+            <label>Specific Gravity</label>
+            <input type="number" step="any" name="sg" required />
+          </div>
+          <div class="form-group">
+            <label>Red Blood Cell Count (millions/cmm)</label>
+            <input type="number" step="any" name="rc" required />
+          </div>
+          <div class="form-group">
+            <label>Albumin</label>
+            <input type="number" step="any" name="al" required />
+          </div>
+          <div class="form-group">
+            <label>Blood Glucose Random (mg/dL)</label>
+            <input type="number" step="any" name="bgr" required />
+          </div>
+          <div class="form-group">
+            <label>Diabetes Mellitus</label>
+            <select name="dm" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Hypertension</label>
+            <select name="htn" required>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Sodium (mEq/L)</label>
+            <input type="number" step="any" name="sod" required />
+          </div>
+
+          <button type="submit">Predict</button>
+        </form>
+      </main>
+
+      <footer>
+        <p>© 2025 MediWiseAI | Kidney Disease Model</p>
+      </footer>
+    </div>
+  </body>
+</html>

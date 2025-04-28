@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI for Medical Diagnosis</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">🧠 AI Diagnosis</div>
+        <ul class="nav-links">
+          <li><a href="/home">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="#moveToModels">Models</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+      <section class="hero">
+        <div class="hero-text">
+          <h1>AI for Medical Diagnosis</h1>
+          <p>Empowering healthcare with intelligent disease prediction</p>
+          <a href="#moveToModels" class="btn-primary">Explore Models</a>
+        </div>
+        <div class="hero-img">
+          <img
+            src="{{ url_for('static', filename='images/medical_ai.webp') }}"
+            alt="Medical AI"
+          />
+        </div>
+      </section>
+    </header>
+
+    <section class="features" id="moveToModels">
+      <h2>Our Mission</h2>
+      <p>
+        We aim to assist early disease detection using advanced AI models
+        trained on real medical data.
+      </p>
+      <div class="feature-grid">
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/heart_img.jpeg') }}"
+            alt="Heart"
+          />
+          <a href="/heart"><h3>Heart Disease Detection</h3></a>
+          <p>
+            Instantly check for possible symptoms of heart disease using AI
+            prediction.
+          </p>
+        </div>
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/diabetes_img.jpg') }}"
+            alt="Diabetes"
+          />
+          <a id="diabetesLink" href="/diabetes"><h3>Diabetes Detection</h3></a>
+          <p>
+            Instantly check for possible symptoms of diabetes using Machine
+            Learning.
+          </p>
+        </div>
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/liver_img.jpeg') }}"
+            alt="Liver disease"
+          />
+          <a href="/liver"><h3>Liver Disease Detection</h3></a>
+          <p>
+            Instantly check for possible symptoms of liver diseases using
+            Machine Learning.
+          </p>
+        </div>
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/kidney_img.webp') }}"
+            alt="Kidney"
+          />
+          <a href="/kidney"><h3>Kidney Disease Detection</h3></a>
+          <p>
+            Instantly check for possible symptoms of kidney diseases using
+            Machine Learning.
+          </p>
+        </div>
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/cancer_img.jpeg') }}"
+            alt="Brease Canceer"
+          />
+          <a href="/breast_cancer"><h3>Breast Cancer Detection</h3></a>
+          <p>
+            Instantly check for possible symptoms of breast cancer using Machine
+            Learning.
+          </p>
+        </div>
+        <div class="feature-box">
+          <img
+            class="images"
+            src="{{ url_for('static', filename='images/malaria_img.jpg') }}"
+            alt="Malaria"
+          />
+          <a href="/malaria"><h3>Malaria Detection</h3></a>
+          <p>
+            Analyze blood smear images to detect malaria infection using deep
+            learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>AI for Medical Diagnosis | Built by Prashant Kumar</p>
+    </footer>
+  </body>
+</html>
+
+<!-- Prototype-1 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical Diagnosis App</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='new_style.css') }}">
+    
+    <link rel="stylesheet" href="../static/new_style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Medical Diagnosis Web App</h1>
+        <nav>
+          <ul>
+            <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+            <li><a href="{{ url_for('models') }}">Models</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="intro">
+      <div class="container">
+        <h2>Welcome to Our Health Diagnosis Platform</h2>
+        <p>
+          This web application helps predict six critical medical conditions
+          using AI-powered models: Heart Disease, Diabetes, Kidney Disease,
+          Liver Disease, Breast Cancer, and Malaria.
+        </p>
+        <p>
+          Click on the "Models" tab to explore each prediction tool, learn about
+          symptoms, and input your data to receive fast, accurate predictions
+          and health advice.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Medical Diagnosis App. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
+-->

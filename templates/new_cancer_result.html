@@ -1,0 +1,48 @@
+<!-- templates/breast_cancer_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Breast Cancer Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='result_style.css') }}"
+    />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🎗️ Breast Cancer AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <section class="content">
+      <h1>Prediction Result</h1>
+      {% if prediction == 1 %}
+      <p class="alert-danger">
+        ⚠️ Our model predicts that you may be at risk of Breast Cancer.
+      </p>
+      <h3>Recommended Next Steps:</h3>
+      <ul>
+        <li>Schedule an appointment with an oncologist.</li>
+        <li>Get a mammogram, ultrasound, or biopsy for confirmation.</li>
+        <li>Discuss treatment options and next steps with your doctor.</li>
+        <li>Maintain a healthy lifestyle and perform regular self-exams.</li>
+      </ul>
+      {% else %}
+      <p class="alert-success">✅ You are not likely to have Breast Cancer.</p>
+      <h3>Prevention Tips:</h3>
+      <ul>
+        <li>Maintain a healthy weight and exercise regularly.</li>
+        <li>Limit alcohol consumption and avoid smoking.</li>
+        <li>Conduct monthly breast self-exams.</li>
+        <li>Have regular clinical breast screenings and mammograms.</li>
+      </ul>
+      {% endif %}
+    </section>
+  </body>
+</html>

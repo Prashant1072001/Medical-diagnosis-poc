@@ -1,0 +1,144 @@
+<!-- templates/heart_disease.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Heart Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fdfdfd;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+      }
+
+      .form-grid label {
+        font-weight: bold;
+      }
+
+      .form-grid input {
+        padding: 8px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .submit-btn {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .submit-btn button {
+        background-color: #0b7dda;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .submit-btn button:hover {
+        background-color: #095a9b;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🫀 Heart Disease AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="form-container">
+      <h2>Heart Disease Prediction</h2>
+      <p>
+        Heart disease refers to various types of conditions that affect the
+        heart’s structure and function. Common symptoms include chest pain,
+        shortness of breath, fatigue, and irregular heartbeat. Early detection
+        is vital to prevent complications.
+      </p>
+      <form action="/predict_heart" method="post">
+        <div class="form-grid">
+          <div>
+            <label>Age:</label>
+            <input type="number" step="any" name="age" required />
+          </div>
+          <div>
+            <label>Sex (1=Male, 0=Female):</label>
+            <input type="number" step="any" name="sex" required />
+          </div>
+          <div>
+            <label>Chest Pain Type (cp):</label>
+            <input type="number" step="any" name="cp" required />
+          </div>
+          <div>
+            <label>Resting Blood Pressure (trestbps):</label>
+            <input type="number" step="any" name="trestbps" required />
+          </div>
+          <div>
+            <label>Serum Cholesterol (chol):</label>
+            <input type="number" step="any" name="chol" required />
+          </div>
+          <div>
+            <label>Fasting Blood Sugar (fbs):</label>
+            <input type="number" step="any" name="fbs" required />
+          </div>
+          <div>
+            <label>Resting ECG (restecg):</label>
+            <input type="number" step="any" name="restecg" required />
+          </div>
+          <div>
+            <label>Max Heart Rate Achieved (thalach):</label>
+            <input type="number" step="any" name="thalach" required />
+          </div>
+          <div>
+            <label>Exercise Induced Angina (exang):</label>
+            <input type="number" step="any" name="exang" required />
+          </div>
+          <div>
+            <label>ST Depression (oldpeak):</label>
+            <input type="number" step="any" name="oldpeak" required />
+          </div>
+          <div>
+            <label>Slope of ST Segment:</label>
+            <input type="number" step="any" name="slope" required />
+          </div>
+          <div>
+            <label>Number of Major Vessels (ca):</label>
+            <input type="number" step="any" name="ca" required />
+          </div>
+          <div>
+            <label>Thalassemia (thal):</label>
+            <input type="number" step="any" name="thal" required />
+          </div>
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!-- templates/kidney_disease.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Kidney Disease Prediction</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='new_style.css') }}"
+    />
+    <style>
+      .form-container {
+        max-width: 800px;
+        margin: 40px auto;
+        background: #fdfdfd;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 30px;
+      }
+
+      .form-grid label {
+        font-weight: bold;
+      }
+
+      .form-grid input {
+        padding: 8px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      .submit-btn {
+        margin-top: 30px;
+        text-align: center;
+      }
+
+      .submit-btn button {
+        background-color: #2e8b57;
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+
+      .submit-btn button:hover {
+        background-color: #1e5c3a;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">🩺 Kidney Disease AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+
+    <div class="form-container">
+      <h2>Kidney Disease Prediction</h2>
+      <p>
+        Kidney disease can lead to severe health problems if not diagnosed
+        early. Common symptoms include swelling in legs, fatigue, high blood
+        pressure, and abnormal urination. Our model helps in early
+        identification of kidney disorders using basic medical parameters.
+      </p>
+      <form action="/predict_kidney" method="post">
+        <div class="form-grid">
+          <div>
+            <label>Hemoglobin (hemo):</label>
+            <input type="number" step="any" name="hemo" required />
+          </div>
+          <div>
+            <label>Packed Cell Volume (pcv):</label>
+            <input type="number" step="any" name="pcv" required />
+          </div>
+          <div>
+            <label>Serum Creatinine (sc):</label>
+            <input type="number" step="any" name="sc" required />
+          </div>
+          <div>
+            <label>Specific Gravity (sg):</label>
+            <input type="number" step="any" name="sg" required />
+          </div>
+          <div>
+            <label>Red Blood Cell Count (rc):</label>
+            <input type="number" step="any" name="rc" required />
+          </div>
+          <div>
+            <label>Albumin (al):</label>
+            <input type="number" step="any" name="al" required />
+          </div>
+          <div>
+            <label>Hypertension (htn):</label>
+            <select name="htn" required>
+              <option value="">Select</option>
+              <option value="1">Yes</option>
+              <option value="0">No</option>
+            </select>
+          </div>
+          <div>
+            <label>Blood Glucose Random (bgr):</label>
+            <input type="number" step="any" name="bgr" required />
+          </div>
+          <div>
+            <label>Sodium (sod):</label>
+            <input type="number" step="any" name="sod" required />
+          </div>
+          <div>
+            <label>Blood Urea (bu):</label>
+            <input type="number" step="any" name="bu" required />
+          </div>
+        </div>
+
+        <div class="submit-btn">
+          <button type="submit">Predict</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
