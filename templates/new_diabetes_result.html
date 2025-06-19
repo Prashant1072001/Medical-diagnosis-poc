@@ -10,6 +10,16 @@
     />
   </head>
   <body>
+    <header class="navbar">
+      <div class="logo">Diabetes AI</div>
+      <ul class="nav-links">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/home#moveToModels">Models</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </header>
+    <!--
     <div class="container">
       <h1>Diabetes Prediction Result</h1>
       <img
@@ -17,24 +27,31 @@
         alt="Diabetes Result"
         class="disease-img"
       />
-      {% if prediction == 1 %}
       <h2 class="positive">You are likely to have diabetes.</h2>
-      <p><strong>Recommended next steps:</strong></p>
+      <a href="/diabetes" class="back-link">&larr; Try Again</a>
+    -->
+    <section class="content">
+      <h1>Prediction Result</h1>
+      {% if prediction == 1 %}
+      <p class="alert-danger">
+        ⚠️ Our model predicts that you may be at risk of Diabetes.
+      </p>
+
+      <h3>Recommended Next Steps:</h3>
       <ul>
         <li>Consult a healthcare provider immediately.</li>
         <li>Maintain a healthy diet and regular physical activity.</li>
         <li>Monitor blood sugar levels regularly.</li>
       </ul>
       {% else %}
-      <h2 class="negative">You are not likely to have diabetes.</h2>
-      <p><strong>Preventive tips:</strong></p>
+      <p class="alert-success">✅ You are not likely to have Diabetes.</p>
+      <h3>Prevention Tips:</h3>
       <ul>
         <li>Maintain a balanced diet rich in fiber.</li>
         <li>Exercise regularly to maintain a healthy weight.</li>
         <li>Get regular health check-ups.</li>
       </ul>
       {% endif %}
-      <a href="/diabetes" class="back-link">&larr; Try Again</a>
-    </div>
+    </section>
   </body>
 </html>
